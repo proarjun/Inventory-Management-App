@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="my-3 py-5 ">
+<div class="content-section">
+    <div class="row mx-auto d-flex justify-content-center">
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Product Name</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fab fa-product-hunt"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.name }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Cost Per {{ inventory.name }}</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-dollar-sign"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.cost_per_item }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Quantity In Stock</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-warehouse"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.quantity_in_stock }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Quantity Sold</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa-regular fa-handshake"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.quantity_sold }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Sales</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa-solid fa-cash-register"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.sales}}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Stock Date</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa-solid fa-calendar-plus"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.stock_date }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Last Sales Date</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa-solid fa-calendar-xmark"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.last_sales_date }}</h3>
+            </div>
+        </div>
+        <a class="btn btn-outline-success btn-md my-3" href="{% url 'update_product' inventory.id %}">Update Record</a>
+        <a class="btn btn-danger btn-md" href="{% url 'delete_product' inventory.id %}">Delete Record</a>
+    </div>
+</div>
+</div>
+{% endblock content %}
